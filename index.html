@@ -1,0 +1,24 @@
+workflow: booking-location-verifier
+risk_tier: minimal (The workflow merely verifies property location details and postal codes without making automated decisions affecting fundamental rights, legal outcomes, or access to essential services.)
+owner: booking platform
+last_audit: 2026-10-29
+---
+
+# Booking Location Verifier
+
+## Risk classification
+This workflow is classified as minimal risk. It performs administrative location and postal code validation for property listings on a holiday booking platform. It does not fall under prohibited practices (unacceptable risk), high-risk use cases under Annex III (such as employment, credit scoring, or law enforcement), or limited risk transparency obligation categories (such as deepfakes or direct customer-facing chatbots), as customers are already aware of AI involvement and no biometric or manipulative techniques are used.
+
+## Five-point hygiene check
+bias:         PASS - Standard postal code verification carries negligible risk of discriminatory bias.
+privacy:      PASS - Customer and vendor personal data (names, emails, addresses) are processed in prompts, requiring standard GDPR data protection compliance.
+consent:      PASS - Processing occurs within the transactional context of completing a booking requested by the customer.
+attribution:  PASS - Data inputs and validation outputs are tied directly to specific booking transactions.
+transparency: PASS - Customers are informed that AI is involved in the process.
+
+## Remediation (do these in order)
+1. Ensure a Data Processing Agreement (DPA) and appropriate safeguards are in place with the AI model provider (Google Gemini) to prevent customer and vendor personal data from being used for model retraining.
+2. Implement data minimization techniques in the prompt design to strip unneeded customer personal details (such as customer names and email addresses) before sending location queries to the model.
+
+## Note
+This is general education on the EU AI Act, not legal advice.
